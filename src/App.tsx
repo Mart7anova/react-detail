@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import OnOff from "./components/OnOff/OnOff";
+import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 function hello() {
     debugger
@@ -11,22 +14,20 @@ function hello() {
 //hello();
 
 function App() {
-    console.log("App rendering")
+    
     return (
         <div>
-            <PageTitle title={"This is App"}/>
-            <PageTitle title={"User"}/>
+            <OnOff />
+            {/*<PageTitle title={"This is App component"} />
+            <PageTitle title={"User"} />*/}
             Article 1
             <Rating value={4}/>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Music"} collapsed={false}/>
-            Article 2
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+            <UncontrolledRating/>
+            {/*<Accordion titleValue={"Menu"} collapsed={true} />
+            <Accordion titleValue={"Music"} collapsed={false} />*/}
+            <UncontrolledAccordion titleValue={"Menu"}/>
+            <UncontrolledAccordion titleValue={"Music"}/>
+
         </div>
     );
 }
