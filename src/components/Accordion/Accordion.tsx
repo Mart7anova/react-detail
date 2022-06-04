@@ -1,8 +1,14 @@
 import React from "react";
 
-type AccordionPropsType={
+export type AccordionPropsType={
     titleValue: string
+    /**
+     * submenu display mode
+     */
     collapsed:boolean
+    /**
+     * when clicked, the submenu collapses and unfolds
+     */
     onClick: ()=>void
 }
 
@@ -10,7 +16,7 @@ function Accordion(props: AccordionPropsType) {
     return (
         <div>
             <AccordionTitle title={props.titleValue} onClick={props.onClick}/>
-            {props.collapsed&&<AccordionBody/>}
+            {!props.collapsed&&<AccordionBody/>}
         </div>
     );
 }

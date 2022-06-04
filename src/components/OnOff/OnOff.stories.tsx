@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import OnOff from './OnOff';
+import {action} from '@storybook/addon-actions';
 
 
 export default {
@@ -8,13 +9,12 @@ export default {
     component: OnOff,
 }as ComponentMeta<typeof OnOff>;
 
-export const OnMode: ComponentStory<typeof OnOff> = () => <OnOff on={true} setOn={x=>x}/>
-export const OffMode: ComponentStory<typeof OnOff> = () => <OnOff on={false} setOn={x=>x}/>
+const callBack = action('clicked')
 
+export const OnMode: ComponentStory<typeof OnOff> = () => <OnOff on={true} setOn={callBack}/>
+export const OffMode: ComponentStory<typeof OnOff> = () => <OnOff on={false} setOn={callBack}/>
 
-/*
 export const ModeChanging: ComponentStory<typeof OnOff> = () =>{
-    const [OnOff, setOnOff] = useState<boolean>(true)
-    return <OnOff on={OnOff} setOn={setOnOff}/>
+    const [value, setValue] = useState<boolean>(true)
+    return <OnOff on={value} setOn={setValue}/>
 }
-*/

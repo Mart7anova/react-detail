@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 type PropsType= {
     on:boolean
@@ -6,8 +6,6 @@ type PropsType= {
 }
 
 const OnOff: React.FC<PropsType> = ({on,setOn}) => {
-
-
     
     const onStyle={
         width: '30px',

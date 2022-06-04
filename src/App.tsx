@@ -7,17 +7,10 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion/Uncontroll
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import OnOff from "./components/OnOff/OnOff";
 
-function hello() {
-    debugger
-    alert('hello))))')
-}
-
-//hello();
-
 function App() {
 
     const [ratingValue,setRatingValue] = useState<RatingValueType>(0)
-    const [collapsed,setCollapsed] = useState(true)
+    const [collapsed,setCollapsed] = useState(false)
     const [on,setOn] = useState(false)
     
     return (
