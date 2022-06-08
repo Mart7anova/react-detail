@@ -1,16 +1,33 @@
-import React, {useState} from "react";
+import React, {useReducer, useState} from 'react';
+
+
+type ActionType={
+    type: string
+}
+
+const TOGGLE_COLLAPSED = 'TOGGLE-COLLAPSED'
+
+const reducer = (state: boolean, action: ActionType) =>{
+    switch (action.type){
+        case TOGGLE_COLLAPSED:
+            return !state
+        default:
+            throw new Error('Bad action type!!!')
+    }
+}
 
 type AccordionPropsType={
     titleValue: string
-    //collapsed: boolean
 }
 
 function UncontrolledAccordion(props: AccordionPropsType) {
 
-    const [collapsed,setCollapsed] = useState(true)
+    //const [collapsed,setCollapsed] = useState(true)
+    const [collapsed,dispatch] = useReducer(reducer, true)
 
     const changeCollapsedValue = ()=> {
-        setCollapsed(!collapsed)
+        //setCollapsed(!collapsed)
+        dispatch({type: TOGGLE_COLLAPSED} )
     }
 
     return (

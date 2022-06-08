@@ -6,6 +6,8 @@ import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff"
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import OnOff from "./components/OnOff/OnOff";
 import Select from './components/Select/Select';
+import {CustomSelect} from './components/CastomSelect/CustomSelect';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 export type ItemType = {
     title: string
@@ -20,7 +22,7 @@ function App() {
             {title: 'Ira', value: '3'},
         ]
     )
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('User')
 
     const [ratingValue,setRatingValue] = useState<RatingValueType>(0)
     const [collapsed,setCollapsed] = useState(false)
@@ -40,11 +42,10 @@ function App() {
         <div>
             <UncontrolledOnOff />
             <OnOff on={on} setOn={setOn}/>
-            {/*<PageTitle title={"This is App component"} />
-            <PageTitle title={"User"} />*/}
-            Article 1
-            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <PageTitle title={"This is App component"} />
             <UncontrolledRating/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UncontrolledAccordion titleValue={'Menu'} />
             <Accordion titleValue={"User"}
                        collapsed={collapsed}
                        item={item}
@@ -53,8 +54,8 @@ function App() {
 
             />
             <Select item={item} onChange={ChangeSelectValue} value={value}/>
-           {/* <UncontrolledAccordion titleValue={"Menu"}/>
-            <UncontrolledAccordion titleValue={"Music"}/>*/}
+            <div>Custom select:</div>
+            <CustomSelect onChange={ChangeSelectValue} item={item} value={'1'}/>
 
         </div>
     );
