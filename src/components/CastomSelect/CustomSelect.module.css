@@ -1,0 +1,13 @@
+.select{
+    border: 1px solid black;
+    width: 200px;
+    font-size: 20px;
+}
+
+.item{
+    border: 1px solid black;
+}
+.selected{
+    background-color: orange;
+    color: white;
+}
