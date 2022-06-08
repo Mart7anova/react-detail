@@ -2,8 +2,6 @@ import React  from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import UncontrolledOnOff from './UncontrolledOnOff';
 
-
-
 export default {
     title: 'UncontrolledOnOff',
     component: UncontrolledOnOff,
