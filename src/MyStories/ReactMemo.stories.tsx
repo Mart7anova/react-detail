@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 export default {
-    title: 'React Memo '
+    title: 'React.memo '
 }
 
 const Counter = (props: { count: number }) => {

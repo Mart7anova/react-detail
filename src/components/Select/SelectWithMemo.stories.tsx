@@ -5,7 +5,7 @@ import Select, {SelectPropsType} from './Select';
 
 
 export default {
-    title: 'components/Select',
+    title: 'components/Select with Memo',
     component: Select
 } as ComponentMeta<typeof Select>;
 
@@ -22,7 +22,6 @@ Base.args = {
         {title: 'Dima', value: '1'},
         {title: 'Misha', value: '2'},
         {title: 'Ira', value: '3'},
-        {title: 'Nick', value: '4'},
     ]
 }
 
