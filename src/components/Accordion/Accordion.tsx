@@ -50,6 +50,7 @@ function AccordionBody(props: AccordionBodyPropsType) {
                 <li key={index} onClick={() => props.onClick(i.value)}>
                     {i.title}
                 </li>)}
+
         </div>
     );
 }
