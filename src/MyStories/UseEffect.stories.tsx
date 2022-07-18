@@ -39,11 +39,15 @@ export const SetTimeout = () => {
     const [counter, setCounter] = useState(1)
 
     useEffect(() => {
-        setTimeout(() => {
+        const ID = setTimeout(() => {
             console.log('setTimeout')
             document.title = counter.toString()
         }, 1000)
+        return(()=>{
+            clearTimeout(ID)
+        })
     }, [counter])
+
     return <>
         {counter} {fake}
         <br/>
@@ -56,10 +60,13 @@ export const SetInterval = () => {
     const [counter, setCounter] = useState(1)
 
     useEffect(() => {
-        /*setInterval(() => {
+        const ID = setInterval(() => {
             console.log('tick ' + counter)
             setCounter((state)=> state+1)
-        }, 1000)*/
+        }, 1000)
+        return (()=>{
+            clearInterval(ID)
+        })
     }, [])
     return <>
         {counter}
